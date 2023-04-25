@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './pages/Home';
 import ProductsPage from './pages/Products';
 import RootLayout from './pages/Root';
+import ErrorPage from './pages/Error';
 
 // The RootLayout router acts as a parent route to the Homepage and ProductsPage routers and it also acts as a WRAPPER for the MainNavigation component.
 
@@ -9,6 +10,7 @@ const router1 = createBrowserRouter([
     {
         path: '/',
         element: <RootLayout />,
+        errorElement: <ErrorPage />,
         children: [
             { path: '/', element: <Homepage /> },
             { path: '/products', element: <ProductsPage /> }
