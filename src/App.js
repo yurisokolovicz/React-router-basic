@@ -13,12 +13,14 @@ const router1 = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { path: '', element: <Homepage /> },
+            { index: true, element: <Homepage /> },
             { path: 'products', element: <ProductsPage /> },
             { path: 'products/:productId', element: <ProductDetailPage /> }
         ]
     }
 ]);
+
+// index: true means that this route is the default route. So if we go to /, then the Homepage will be rendered.
 
 // :product makes the product id dynamic. So if we go to /products/1, then the product id will be 1. If we go to /products/2, then the product id will be 2. And so on. This is how we can make dynamic routes in React Router.
 
