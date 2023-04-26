@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // useParams is a React hook that allows us to extract dynamic params from the URL. So if we go to /products/1, then the product id will be 1. If we go to /products/2, then the product id will be 2. And so on. This is how we can make dynamic routes in React Router.
 
 const ProductDetailPage = () => {
@@ -10,6 +10,11 @@ const ProductDetailPage = () => {
         <>
             <h1>Product Details!</h1>
             <p>{params.productId}</p>
+            <p>
+                <Link to=".." relative="path">
+                    Back
+                </Link>
+            </p>
         </>
     );
 };
